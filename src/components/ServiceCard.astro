@@ -1,0 +1,37 @@
+---
+import CircleArrowIcon from "@icons/CircleArrowIcon.astro";
+
+interface Props {
+  title: string;
+  url: string;
+  imgSrc: string;
+  h3Styles: string;
+  linkStyles: string;
+  class?: string;
+}
+
+const { title, url, imgSrc, h3Styles, linkStyles } = Astro.props;
+---
+
+<article
+  class=`${Astro.props.class} col-span-3 border border-dark rounded-3xl p-10 shadow-[inset_0px_-3px_0px_0px_#191A23] md:min-h-[280px]`
+>
+  <div class="relative h-full flex flex-col justify-between text-start">
+    <div class="max-w-[150px]">
+      <h3 class=`${h3Styles} inline text-xl leading-none font-semibold`>
+        {title}
+      </h3>
+    </div>
+    <a
+      href={url}
+      class=`${linkStyles} rounded-full md:flex md:items-center md:gap-2`
+    >
+      <CircleArrowIcon class="w-10 rounded-full" />
+      <span
+        class="hidden md:block md:text-lg md:hover:translate-x-1 md:duration-200"
+        >Learn more</span
+      >
+    </a>
+    <img src={imgSrc} alt="" class="h-28 absolute bottom-0 right-0 md:h-32" />
+  </div>
+</article>

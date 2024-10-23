@@ -1,0 +1,81 @@
+---
+import SectionContainer from "@containers/SectionContainer.astro";
+import ServiceCard from "@components/ServiceCard.astro";
+import SectionTitle from "@components/SectionTitle.astro";
+
+const services = [
+  {
+    title: "Search engine optimization",
+    url: "#",
+    h3Styles: "bg-primary",
+    imgSrc: "/public/bento_images/bento-1.webp",
+    linkStyles: "text-dark",
+    class: "md:col-span-1",
+  },
+  {
+    title: "Pay-per-click advertising",
+    url: "#",
+    h3Styles: "bg-white",
+    imgSrc: "/public/bento_images/bento-2.webp",
+    linkStyles: "text-dark",
+    class: "bg-primary md:col-span-2",
+  },
+  {
+    title: "Social Media Marketing",
+    url: "#",
+    h3Styles: "bg-primary",
+    imgSrc: "/public/bento_images/bento-3.webp",
+    linkStyles: "text-white",
+    class: "bg-dark md:col-span-2",
+  },
+  {
+    title: "Email Marketing",
+    url: "#",
+    h3Styles: "bg-primary",
+    imgSrc: "/public/bento_images/bento-4.webp",
+    linkStyles: "text-dark",
+    class: "md:col-span-1 ",
+  },
+  {
+    title: "Analytics and Tracking",
+    url: "#",
+    h3Styles: "bg-white max-w-[200px]",
+    imgSrc: "/public/bento_images/bento-6.webp",
+    linkStyles: "text-dark",
+    class: "bg-primary md:col-span-1",
+  },
+  {
+    title: "Content Creation",
+    url: "#",
+    h3Styles: "bg-primary",
+    imgSrc: "/public/bento_images/bento-5.webp",
+    linkStyles: "text-white",
+    class: "bg-dark md:col-span-2",
+  },
+];
+---
+
+<SectionContainer
+  class="text-center md:flex md:flex-col md:gap-10 md:text-start"
+>
+  <SectionTitle
+    title="Services"
+    description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+  />
+  <div
+    class="grid grid-cols-1 auto-rows-[280px] md:grid-cols-3 md:grid-rows-3 gap-5"
+  >
+    {
+      services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          url={service.url}
+          h3Styles={service.h3Styles}
+          imgSrc={service.imgSrc}
+          linkStyles={service.linkStyles}
+          class={service.class}
+        />
+      ))
+    }
+  </div>
+</SectionContainer>

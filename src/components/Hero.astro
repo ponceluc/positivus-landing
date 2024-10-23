@@ -1,0 +1,49 @@
+---
+import SectionContainer from "@containers/SectionContainer.astro";
+
+const brandsLogos = [
+  { name: "amazon", src: "/public/brands_logos/amazon-logo.webp" },
+  { name: "dribbble", src: "/public/brands_logos/dribbble-logo.webp" },
+  { name: "hubspot", src: "/public/brands_logos/hubspot-logo.webp" },
+  { name: "notion", src: "/public/brands_logos/notion-logo.webp" },
+  { name: "netflix", src: "/public/brands_logos/netflix-logo.webp" },
+  { name: "zoom", src: "/public/brands_logos/zoom-logo.webp" },
+];
+---
+
+<SectionContainer
+  class="mb-[70px] flex justify-center md:justify-between mt-10"
+>
+  <div class="flex flex-col max-w-[530px]">
+    <h1
+      class="text-4xl font-bold leading-[1.15] text-pretty mb-3 md:text-6xl md:mb-9"
+    >
+      Navigating the digital landscape for success
+    </h1>
+    <img
+      class="mb-5 md:hidden"
+      src="/public/img-hero-mobile.webp"
+      alt="Hero ilustration for mobile"
+    />
+    <p class="text-sm md:text-xl mb-9">
+      Our digital marketing agency helps businesses grow and succeed online
+      through a range of services including SEO, PPC, social media marketing,
+      and content creation.
+    </p>
+    <div class="">
+      <button
+        class="w-full text-lg md:text-xl px-8 py-4 bg-dark text-white rounded-xl md:hover:text-dark md:hover:bg-primary"
+        >Book a consultation</button
+      >
+    </div>
+  </div>
+
+  <img src="/public/img-hero.webp" alt="" class="w-[600px] hidden md:block" />
+</SectionContainer>
+<div class="w-[85vw] mx-auto flex flex-wrap justify-between mb-14 md:mb-36">
+  {
+    brandsLogos.map((logo) => (
+      <img src={logo.src} alt="" class="w-auto h-12 filter grayscale" />
+    ))
+  }
+</div>
