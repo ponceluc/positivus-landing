@@ -8,49 +8,49 @@ const services = [
     title: "Search engine optimization",
     url: "#",
     h3Styles: "bg-primary",
-    imgSrc: "/public/bento_images/bento-1.webp",
+    imgSrc: "/bento_images/bento-1.webp",
     linkStyles: "text-dark",
-    class: "md:col-span-1",
+    class: "lg:col-span-5",
   },
   {
     title: "Pay-per-click advertising",
     url: "#",
     h3Styles: "bg-white",
-    imgSrc: "/public/bento_images/bento-2.webp",
+    imgSrc: "/bento_images/bento-2.webp",
     linkStyles: "text-dark",
-    class: "bg-primary md:col-span-2",
+    class: "bg-primary lg:col-span-7",
   },
   {
     title: "Social Media Marketing",
     url: "#",
     h3Styles: "bg-primary",
-    imgSrc: "/public/bento_images/bento-3.webp",
+    imgSrc: "/bento_images/bento-3.webp",
     linkStyles: "text-white",
-    class: "bg-dark md:col-span-2",
+    class: "bg-dark lg:col-span-7",
   },
   {
     title: "Email Marketing",
     url: "#",
     h3Styles: "bg-primary",
-    imgSrc: "/public/bento_images/bento-4.webp",
+    imgSrc: "/bento_images/bento-4.webp",
     linkStyles: "text-dark",
-    class: "md:col-span-1 ",
+    class: "lg:col-span-5",
   },
   {
     title: "Analytics and Tracking",
     url: "#",
     h3Styles: "bg-white max-w-[200px]",
-    imgSrc: "/public/bento_images/bento-6.webp",
+    imgSrc: "/bento_images/bento-6.webp",
     linkStyles: "text-dark",
-    class: "bg-primary md:col-span-1",
+    class: "bg-primary lg:col-span-5",
   },
   {
     title: "Content Creation",
     url: "#",
     h3Styles: "bg-primary",
-    imgSrc: "/public/bento_images/bento-5.webp",
+    imgSrc: "/bento_images/bento-5.webp",
     linkStyles: "text-white",
-    class: "bg-dark md:col-span-2",
+    class: "bg-dark lg:col-span-7",
   },
 ];
 ---
@@ -62,9 +62,7 @@ const services = [
     title="Services"
     description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
   />
-  <div
-    class="grid grid-cols-1 auto-rows-[280px] md:grid-cols-3 md:grid-rows-3 gap-5"
-  >
+  <div class="grid grid-cols-1 auto-rows-[280px] gap-5 lg:grid-cols-12">
     {
       services.map((service) => (
         <ServiceCard

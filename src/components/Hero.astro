@@ -2,27 +2,27 @@
 import SectionContainer from "@containers/SectionContainer.astro";
 
 const brandsLogos = [
-  { name: "amazon", src: "/public/brands_logos/amazon-logo.webp" },
-  { name: "dribbble", src: "/public/brands_logos/dribbble-logo.webp" },
-  { name: "hubspot", src: "/public/brands_logos/hubspot-logo.webp" },
-  { name: "notion", src: "/public/brands_logos/notion-logo.webp" },
-  { name: "netflix", src: "/public/brands_logos/netflix-logo.webp" },
-  { name: "zoom", src: "/public/brands_logos/zoom-logo.webp" },
+  { name: "amazon", src: "/brands_logos/amazon-logo.webp" },
+  { name: "dribbble", src: "/brands_logos/dribbble-logo.webp" },
+  { name: "hubspot", src: "/brands_logos/hubspot-logo.webp" },
+  { name: "notion", src: "/brands_logos/notion-logo.webp" },
+  { name: "netflix", src: "/brands_logos/netflix-logo.webp" },
+  { name: "zoom", src: "/brands_logos/zoom-logo.webp" },
 ];
 ---
 
 <SectionContainer
-  class="mb-[70px] flex justify-center md:justify-between mt-10"
+  class="h-screen mb-[70px] flex justify-center items-center lg:justify-between mt-20 md:mt-[150px] lg:mt-0"
 >
   <div class="flex flex-col max-w-[530px]">
     <h1
-      class="text-4xl font-bold leading-[1.15] text-pretty mb-3 md:text-6xl md:mb-9"
+      class="text-4xl font-bold leading-[1.15] text-pretty mb-3 md:text-5xl xl:text-6xl md:mb-9"
     >
       Navigating the digital landscape for success
     </h1>
     <img
-      class="mb-5 md:hidden"
-      src="/public/img-hero-mobile.webp"
+      class="mb-5 lg:hidden md:w-[90%]"
+      src="/img-hero-mobile.webp"
       alt="Hero ilustration for mobile"
     />
     <p class="text-sm md:text-xl mb-9">
@@ -38,12 +38,47 @@ const brandsLogos = [
     </div>
   </div>
 
-  <img src="/public/img-hero.webp" alt="" class="w-[600px] hidden md:block" />
+  <img
+    src="/img-hero.webp"
+    alt=""
+    class="hidden lg:block lg:w-[450px] xl:w-[600px]"
+  />
 </SectionContainer>
-<div class="w-[85vw] mx-auto flex flex-wrap justify-between mb-14 md:mb-36">
-  {
-    brandsLogos.map((logo) => (
-      <img src={logo.src} alt="" class="w-auto h-12 filter grayscale" />
-    ))
-  }
+
+<div class="w-[85vw] mx-auto overflow-hidden slider mb-14 md:mb-36">
+  <div class="carousel flex flex-nowrap gap-10 md:gap-20">
+    {
+      brandsLogos.map((logo) => (
+        <img src={logo.src} alt="" class="w-32 h-auto filter grayscale" />
+      ))
+    }
+    {
+      brandsLogos.map((logo) => (
+        <img src={logo.src} alt="" class="w-32 h-auto filter grayscale" />
+      ))
+    }
+  </div>
 </div>
+
+<style>
+  .slider {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 20% 80%,
+      transparent
+    );
+  }
+  .carousel {
+    animation: slide 10s linear infinite;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% / 2));
+    }
+  }
+</style>

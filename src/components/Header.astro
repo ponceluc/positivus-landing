@@ -1,19 +1,51 @@
-<header class="w-screen py-10 hidden md:block">
-  <div class="w-[85vw] mx-auto flex items-center justify-between">
-    <img src="/public/logo.webp" alt="" class="h-14 w-auto" />
-    <nav class="text-lg flex gap-10 items-center">
-      <a href="#about-us" class="hover:bg-primary transition duration-200"
-        >About us</a
-      >
-      <a href="#" class="hover:bg-primary transition duration-200">Services</a>
-      <a href="#" class="hover:bg-primary transition duration-200">Use Cases</a>
-      <a href="#" class="hover:bg-primary transition duration-200">Pricing</a>
-      <a href="#" class="hover:bg-primary transition duration-200">Blog</a>
+---
+import MenuIcon from "@icons/MenuIcon.astro";
+import CloseMenuIcon from "@icons/CloseMenuIcon.astro";
+---
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50 lg:px-0">
+  <div
+    class="w-[85vw] max-w-[1440px] mx-auto flex items-center justify-between gap-16"
+  >
+    <img src="/logo.webp" alt="" class="h-9 md:h-14 w-auto" />
+    <nav
+      id="header-menu"
+      class="fixed w-full h-dvh inset-0 bg-dark/90 md:text-xl lg:text-lg flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 lg:static lg:h-[initial] lg:bg-[initial] lg:flex-row lg:translate-y-[initial] lg:gap-6 lg:justify-between lg:w-auto lg:items-center"
+    >
       <a
         href="#"
-        class="px-8 py-4 border border-black rounded-xl hover:bg-primary transition duration-200"
-        >Request a quote</a
+        class="text-white lg:text-dark lg:hover:bg-primary transition duration-200"
+        >Services</a
       >
+      <a
+        href="#"
+        class="text-white lg:text-dark lg:hover:bg-primary transition duration-200 whitespace-nowrap"
+        >Use Cases</a
+      >
+      <a
+        href="#"
+        class="text-white lg:text-dark lg:hover:bg-primary transition duration-200"
+        >Pricing</a
+      >
+      <a
+        href="#"
+        class="text-white lg:text-dark lg:hover:bg-primary transition duration-200"
+        >Blog</a
+      >
+      <a href="#header-nav" class="lg:hidden absolute top-6 right-6">
+        <CloseMenuIcon class="h-7 text-white" />
+      </a>
+
+      <a
+        href="#"
+        class="px-4 py-2 lg:px-8 lg:py-4 text-white border border-white lg:text-dark lg:border-black rounded-xl hover:bg-primary lg:w-full text-center"
+      >
+        Request a quote
+      </a>
     </nav>
+
+    <a href="#header-menu" class="lg:hidden">
+      <MenuIcon class="h-7 text-dark" />
+    </a>
   </div>
 </header>

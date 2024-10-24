@@ -1,0 +1,20 @@
+---
+import ArrowIcon from "@icons/ArrowIcon.astro";
+
+interface Props {
+  description: string;
+}
+const { description } = Astro.props;
+---
+
+<article
+  class="min-w-[85%] bg-dark rounded-3xl py-10 px-12 text-start text-white text-pretty"
+>
+  <p class="pb-5">
+    {description}
+  </p>
+  <a href="#" class="flex items-center text-primary">
+    Learn more
+    <ArrowIcon class="h-8 text-primary" />
+  </a>
+</article>

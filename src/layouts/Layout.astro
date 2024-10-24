@@ -1,4 +1,5 @@
 ---
+import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import "@fontsource-variable/space-grotesk";
 
@@ -24,10 +25,27 @@ const { title } = Astro.props;
   <body class="overflow-x-hidden">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global>
   body {
     font-family: "Space Grotesk Variable", sans-serif;
+  }
+
+  #header-nav {
+    animation: blurOnScroll linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blurOnScroll {
+    to {
+      box-shadow:
+        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+    }
   }
 </style>
