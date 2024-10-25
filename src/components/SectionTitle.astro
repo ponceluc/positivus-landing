@@ -6,13 +6,13 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="mb-10 text-center md:flex md:gap-8 md:items-center">
+<div class="mb-10 text-center md:flex md:gap-8 md:items-center md:text-start">
   <h2
-    class="inline text-4xl bg-primary font-semibold px-[7px] rounded-lg md:text-4xl md:mb-0"
+    class="inline text-3xl bg-primary font-semibold px-[7px] rounded-lg md:text-4xl md:mb-0 md:max-w-[10ch] lg:max-w-full"
   >
     {title}
   </h2>
-  <p class="text-sm text-pretty md:text-base md:max-w-[520px] mt-8">
+  <p class="text-sm mt-8 text-pretty md:text-base md:max-w-[520px] md:mt-0">
     {description}
   </p>
 </div>

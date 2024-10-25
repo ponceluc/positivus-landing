@@ -1,7 +1,7 @@
 ---
 import SectionContainer from "@containers/SectionContainer.astro";
 
-const brandsLogos = [
+const brandsLogos: { name: string; src: string }[] = [
   { name: "amazon", src: "/brands_logos/amazon-logo.webp" },
   { name: "dribbble", src: "/brands_logos/dribbble-logo.webp" },
   { name: "hubspot", src: "/brands_logos/hubspot-logo.webp" },
@@ -12,11 +12,11 @@ const brandsLogos = [
 ---
 
 <SectionContainer
-  class="h-screen mb-[70px] flex justify-center items-center lg:justify-between mt-20 md:mt-[150px] lg:mt-0"
+  class="h-screen mb-[70px] flex justify-center items-center lg:justify-between mt-20 md:mt-[150px] lg:mt-0 md:h-auto"
 >
   <div class="flex flex-col max-w-[530px]">
     <h1
-      class="text-4xl font-bold leading-[1.15] text-pretty mb-3 md:text-5xl xl:text-6xl md:mb-9"
+      class="text-4xl font-bold max-w-[13ch] leading-[1.25] text-pretty mb-3 md:text-5xl xl:text-6xl md:mb-9"
     >
       Navigating the digital landscape for success
     </h1>
@@ -45,7 +45,7 @@ const brandsLogos = [
   />
 </SectionContainer>
 
-<div class="w-[85vw] mx-auto overflow-hidden slider mb-14 md:mb-36">
+<div class="w-[85vw] mx-auto overflow-hidden slider my-14 md:mb-36">
   <div class="carousel flex flex-nowrap gap-10 md:gap-20">
     {
       brandsLogos.map((logo) => (
