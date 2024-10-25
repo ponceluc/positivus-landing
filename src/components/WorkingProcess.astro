@@ -1,0 +1,69 @@
+---
+import SectionContainer from "@containers/SectionContainer.astro";
+import SectionTitle from "@components/SectionTitle.astro";
+import PlusIcon from "@icons/PlusIcon.astro";
+
+const processes = [
+  {
+    number: "01",
+    title: "Consultation",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    number: "02",
+    title: "Research and Strategy Development",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    number: "03",
+    title: "Implementation",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    number: "04",
+    title: "Monitoring and Optimization",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    number: "05",
+    title: "Reporting and Communication",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    number: "06",
+    title: "Continual Improvement",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+];
+---
+
+<SectionContainer>
+  <SectionTitle
+    title="Our Working Process"
+    description="Step-by-Step Guide to Achieving Your Business Goals"
+  />
+  <div class="flex flex-col gap-5">
+    {
+      processes.map((process) => (
+        <button class="w-full aspect-[392/106] p-7 border rounded-[50px] flex flex-col shadow-[inset_0px_-3px_0px_0px_#191A23]">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-5 font-semibold">
+              <span class="text-3xl">{process.number}</span>
+              <h4 class="text-md max-w-[21ch]">{process.title}</h4>
+            </div>
+            <PlusIcon class="h-6 min-w-6" />
+          </div>
+          <div class="hidden">
+            <p>{process.description}</p>
+          </div>
+        </button>
+      ))
+    }
+  </div>
+</SectionContainer>
