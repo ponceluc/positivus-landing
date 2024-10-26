@@ -1,0 +1,88 @@
+---
+import SectionContainer from "@containers/SectionContainer.astro";
+import SectionTitle from "@components/SectionTitle.astro";
+import Divisor from "@components/Divisor.astro";
+import LinkedInIcon from "@icons/LinkedInIcon.astro";
+
+const team = [
+  {
+    name: "John Smith",
+    job: "CEO and Founder",
+    imgSrc: "/team_images/john-smith.webp",
+    experience:
+      "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
+  },
+  {
+    name: "Jane Doe",
+    job: "Director of Operations",
+    imgSrc: "/team_images/jane-doe.webp",
+    experience:
+      "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
+  },
+  {
+    name: "Michael Brown",
+    job: "Senior SEO Specialist",
+    imgSrc: "/team_images/michael-brown.webp",
+    experience:
+      "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
+  },
+  {
+    name: "Emily Johnson",
+    job: "PPC Manager",
+    imgSrc: "/team_images/emily-johnson.webp",
+    experience:
+      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+  },
+  {
+    name: "Brian Williams",
+    job: "Social Media Specialist",
+    imgSrc: "./team_images/brian-williams.webp",
+    experience:
+      "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
+  },
+  {
+    name: "Sarah Kim",
+    job: "Content Creator",
+    imgSrc: "/team_images/sarah-kim.webp",
+    experience:
+      "2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries",
+  },
+];
+---
+
+<SectionContainer>
+  <SectionTitle
+    title="Team"
+    description="Meet the skilled and experienced team behind our successful digital marketing strategies"
+  />
+  <div class="w-full grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
+    {
+      team.map((member) => (
+        <article class="w-full p-9 flex flex-col gap-1 border border-dark rounded-3xl shadow-[inset_0px_-3px_0px_0px_#191A23]">
+          <div class="flex justify-between">
+            <div class="flex gap-5">
+              <img src={member.imgSrc} alt="" class="h-24 lg:h-20 lg:" />
+              <div class="flex flex-col justify-end">
+                <h4 class="font-semibold text-lg">{member.name}</h4>
+                <span class="text-sm">{member.job}</span>
+              </div>
+            </div>
+            <div class="flex items-start text-dark">
+              <LinkedInIcon />
+            </div>
+          </div>
+          <Divisor />
+          <div class="">
+            <p class="text-wrap">{member.experience}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <div class="mt-5 flex justify-end">
+    <button
+      class="w-full text-lg md:text-xl px-8 py-4 bg-dark text-white rounded-xl md:hover:text-dark md:hover:bg-primary lg:max-w-64"
+      >See all team</button
+    >
+  </div>
+</SectionContainer>
