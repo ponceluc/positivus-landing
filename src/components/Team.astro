@@ -3,6 +3,7 @@ import SectionContainer from "@containers/SectionContainer.astro";
 import SectionTitle from "@components/SectionTitle.astro";
 import Divisor from "@components/Divisor.astro";
 import LinkedInIcon from "@icons/LinkedInIcon.astro";
+import Button from "@components/Button.astro";
 
 const team = [
   {
@@ -80,9 +81,6 @@ const team = [
     }
   </div>
   <div class="mt-5 flex justify-end">
-    <button
-      class="w-full text-lg md:text-xl px-8 py-4 bg-dark text-white rounded-xl md:hover:text-dark md:hover:bg-primary lg:max-w-64"
-      >See all team</button
-    >
+    <Button text="See all team" styles="lg:max-w-64" />
   </div>
 </SectionContainer>
