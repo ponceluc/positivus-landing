@@ -51,7 +51,7 @@ const processes = [
   <div class="flex flex-col gap-5">
     {
       processes.map((process) => (
-        <button class="w-full aspect-[392/106] p-10 border rounded-3xl flex justify-center flex-col shadow-[inset_0px_-3px_0px_0px_#191A23] md:aspect-[392/65]">
+        <button class="w-full aspect-[392/106] p-10 border rounded-3xl flex justify-center flex-col shadow-[inset_0px_-3px_0px_0px_#191A23] md:aspect-[392/65] lg:aspect-[1200/112]">
           <div class="w-full flex justify-between items-center">
             <div class="flex text-start items-center gap-5 font-semibold">
               <span class="text-3xl md:text-4xl">{process.number}</span>
@@ -59,7 +59,7 @@ const processes = [
                 {process.title}
               </h4>
             </div>
-            <PlusIcon class="h-6 min-w-6" />
+            <PlusIcon class="h-6 min-w-6 lg:h-8 " />
           </div>
           <div class="hidden">
             <hr class="w-full my-5 h-[1px] border-none bg-dark" />
