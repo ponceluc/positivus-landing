@@ -2,6 +2,7 @@
 import SectionContainer from "@containers/SectionContainer.astro";
 import SectionTitle from "@components/SectionTitle.astro";
 import PlusIcon from "@icons/PlusIcon.astro";
+import MinusIcon from "@icons/MinusIcon.astro";
 
 const processes = [
   {
@@ -53,7 +54,7 @@ const processes = [
       processes.map((process) => (
         <article
           id="process-item"
-          class="w-full aspect-[392/106] p-10 border rounded-3xl flex justify-center flex-col  shadow-[inset_0px_-3px_0px_0px_#191A23] md:aspect-[392/65] lg:aspect-[1200/112]"
+          class="w-full aspect-[392/106] p-10 border rounded-3xl flex justify-center flex-col cursor-pointer shadow-[inset_0px_-3px_0px_0px_#191A23] md:aspect-[392/65] lg:aspect-[1200/112]"
         >
           <div class="w-full flex justify-between items-center">
             <div class="flex text-start items-center gap-5 font-semibold">
@@ -62,9 +63,13 @@ const processes = [
                 {process.title}
               </h4>
             </div>
-            <PlusIcon class="h-6 min-w-6 lg:h-8 " />
+            <PlusIcon id="open-icon" class="h-6 min-w-6 lg:h-8 " />
+            <MinusIcon id="close-icon" class="hidden h-6 min-w-6 lg:h-8 " />
           </div>
-          <div id="accordion-text" class="hidden">
+          <div
+            id="accordion-text"
+            class="max-h-0 overflow-hidden transition-all duration-200 ease-out"
+          >
             <hr class="w-full my-5 h-[1px] border-none bg-dark" />
             <p class="text-start">{process.description}</p>
           </div>
@@ -74,21 +79,34 @@ const processes = [
   </div>
 </SectionContainer>
 
+<style>
+  .open {
+    background-color: var(--primary-color);
+  }
+</style>
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const processItems = document.querySelectorAll("#process-item");
+  const processItems = document.querySelectorAll("#process-item");
 
-    processItems.forEach((processItem) => {
-      const accordionText = processItem.querySelector("#accordion-text");
+  processItems.forEach((processItem) => {
+    const accordionText = processItem.querySelector(
+      "#accordion-text"
+    ) as HTMLElement;
+    const openIcon = processItem.querySelector("#open-icon") as HTMLElement;
+    const closeIcon = processItem.querySelector("#close-icon") as HTMLElement;
 
-      processItem.addEventListener("click", () => {
-        accordionText?.classList.toggle("hidden");
-        if (!accordionText?.classList.contains("hidden")) {
-          processItem?.classList.add("bg-primary");
-        } else {
-          processItem.classList.remove("bg-primary");
-        }
-      });
+    processItem.addEventListener("click", () => {
+      processItem.classList.toggle("open");
+
+      if (processItem.classList.contains("open")) {
+        accordionText.style.maxHeight = accordionText.scrollHeight + "px";
+        openIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      } else {
+        accordionText.style.maxHeight = "0";
+        openIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
     });
   });
 </script>
